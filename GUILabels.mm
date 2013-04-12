@@ -30,7 +30,7 @@
         powerUp = [CCSprite spriteWithFile:@"LifeHeart.png"];
         
         
-        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Level 1" fontName:@"Marker Felt" fontSize:40];
+        title = [CCLabelTTF labelWithString:@"Level 1" fontName:@"Marker Felt" fontSize:40];
         title.position = ccp(155, 450);
         [self addChild:title];
         
@@ -74,9 +74,9 @@
     [scoreLabel setString:[NSString stringWithFormat:@"%i", score]];
     
 }
--(void)setPowerUpstring:(int)powerUp
+-(void)setPowerUpstring:(int)powerUpInt
 {
-    [powerUpLabel setString:[NSString stringWithFormat:@"  %d", powerUp]];
+    [powerUpLabel setString:[NSString stringWithFormat:@"  %d", powerUpInt]];
     
 }
 -(void)setTimeLabel:(int)secs

@@ -19,8 +19,9 @@
 #import "Bricks.h"
 #import "GUILabels.h"
 #import "GameElements.h"
-#import "Brick.h"
+#import "MyContactListener.h"
 #import "MovingBrick.h"
+#import "BrickManager.h"
 
 
 
@@ -32,9 +33,11 @@
     Bricks*bricks;
     GUILabels*guiLabels;
     GameElements*gameElements;
-    Brick*paddle2;
     MovingBrick*paddle;
     b2Body *_paddleBody;    
+    BrickManager*brickManager;
+    MyContactListener*myContactListener;\
+    Brick*brick;
     
     
 }

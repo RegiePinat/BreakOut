@@ -49,11 +49,11 @@
         
         
         bola = [[Ball alloc]initWithWorld:world];
-        bricks = [[Bricks alloc]initWithWorld:world];
+        //bricks = [[Bricks alloc]initWithWorld:world];
         guiLabels = [[GUILabels alloc]init];
         paddle = [[MovingBrick alloc]initWithWorld:world];
-    
-        
+        brickManager = [[BrickManager alloc]initWithWorld:world];
+
         b2Body *_groundBody;
 
     
@@ -115,18 +115,18 @@
         [gameElements schedule:@selector(startTimer)interval:1.0];
         
         [guiLabels setTimeLabel:[gameElements startTimer]];
+        
     
 		
         [self addChild:bola];
         
         [self addChild:paddle];
         
-        [self addChild:bricks];
-        
         [self addChild:guiLabels];
         
         [self schedule:@selector(tick:)];
         
+        [self addChild:brickManager];
       
         self.isAccelerometerEnabled= YES;
         
@@ -144,19 +144,40 @@
             ballData.position = ccp(b->GetPosition().x * PTM_RATIO,
                                     b->GetPosition().y * PTM_RATIO);
             ballData.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+        
+                
             
             
            
-            
-           
-            }
+        }
     }
-    
+
+  /*
+    std::vector<b2Body *>toDestroy;
+    std::vector<MyContact>::iterator pos;
+    for (pos=myContactListener->_contacts.begin();
+         pos != myContactListener->_contacts.end(); ++pos) {
+        MyContact contact = *pos;
+    }
+*/
+
+
+
+
+
 }
+
+
+
+
+
+
 
 
 -(void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
+    
+    
     
     
     

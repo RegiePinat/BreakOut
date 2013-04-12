@@ -16,8 +16,7 @@
     CCSprite*ball;
     b2World *world;
     b2Body *ballBody;
-    
-    
+    b2Fixture *_ballFixture;    
 }
 -(Ball*)initWithWorld: (b2World*)world;
 -(id)Stop;

@@ -13,11 +13,12 @@
 
 @interface Brick : CCSprite{
     
-    
+    int x, y;
 
     
 }
 
 -(Brick*)initWithWorld: (b2World*)world;
+-(void)paddleMake;
 @property(nonatomic)b2World*world;
 @end

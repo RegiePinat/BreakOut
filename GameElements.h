@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GUILabels.h"
 
 @interface GameElements : CCLayer {
     
@@ -17,6 +18,8 @@
     int mins;
     int seconds;
     int timerInt;
+    GUILabels*gui;
+    
     
 }
 -(int)startTimer;

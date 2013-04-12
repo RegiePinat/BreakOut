@@ -21,6 +21,5 @@
 }
 
 -(Paddle*)initWithWorld:(b2World*)world;
-
-
+-(b2Body)PaddleBody;
 @end

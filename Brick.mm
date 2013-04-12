@@ -14,7 +14,12 @@
 
 -(Brick*)initWithWorld: (b2World*)world2
 {
-    if (self=[super initWithFile:@"Sky_Blue.png" rect:CGRectMake(0, 0, 45, 20)])
+    
+    
+    
+    
+    
+    if (self=[super initWithFile:@"Sky_Blue.png" rect:CGRectMake (0,0,50,10)]);
     {
     
         
@@ -25,5 +30,11 @@
     
     return self;
 }
+
+
+
+                
+                
+                
 
 @end

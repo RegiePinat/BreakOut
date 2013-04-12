@@ -98,12 +98,13 @@
     
 }
 
--(void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+-(b2Body)PaddleBody
 {
     
     
     
-    _paddleBody->SetLinearVelocity(b2Vec2(15*acceleration.x,0.0f));
+    return *(_paddleBody);
+    
     
     
     

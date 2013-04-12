@@ -20,7 +20,7 @@
         
         ball =[CCSprite spriteWithFile:@"redball.png" rect:CGRectMake(0, 0, 30, 30) ];
          [self addChild:ball];
-        
+     
         ball.position = ccp(100,100);
         
         ball.tag = 1;
@@ -28,7 +28,8 @@
         
         
       
-        ballBodyDef.type = b2_dynamicBody;         ballBodyDef.position.Set(100/PTM_RATIO, 100/PTM_RATIO);
+        ballBodyDef.type = b2_dynamicBody;
+        ballBodyDef.position.Set(100/PTM_RATIO, 100/PTM_RATIO);
         ballBodyDef.userData = ball;
         ballBody = world->CreateBody(&ballBodyDef);
         
@@ -57,7 +58,7 @@
         
        
         
-        
+     
         
         
         
@@ -78,6 +79,17 @@
     
     
 }
+
+
+-(b2Fixture)ballFixture
+{
+    
+    return *(_ballFixture);
+    
+    
+}
+
+
 
 
 

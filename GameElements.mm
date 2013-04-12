@@ -60,13 +60,18 @@
 {
     powerUpInt++;
     
+    [gui setPowerUpstring:powerUpInt];
+    
+    
     
 }
 -(void)addScore
 {
     
     
-    score = score +10;
+    score =+10;
+    [gui setScoreString:score];
+    
     
     
 }

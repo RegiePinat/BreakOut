@@ -198,6 +198,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D510E441718AC1C001643BE /* MyContactListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
+		7D510E451718AC1C001643BE /* MyContactListener.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 		7D5BEF7E171604D6009CBDAC /* BreakOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5BEF81171604D6009CBDAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7D5BEF83171604D6009CBDAC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -660,6 +662,8 @@
 			children = (
 				7D5BF19E171604DD009CBDAC /* AppDelegate.h */,
 				7D5BF19F171604DD009CBDAC /* AppDelegate.mm */,
+				7D510E441718AC1C001643BE /* MyContactListener.h */,
+				7D510E451718AC1C001643BE /* MyContactListener.mm */,
 				7D5BF1A1171604DD009CBDAC /* MainController.h */,
 				7D5BF1A2171604DD009CBDAC /* MainController.mm */,
 				7D5BF1A4171604DD009CBDAC /* IntroLayer.h */,

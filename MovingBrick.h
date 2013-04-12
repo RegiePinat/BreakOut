@@ -11,15 +11,17 @@
 #import "Brick.h"
 #import "Box2D.h"
 
-@interface MovingBrick : Brick {
+@interface MovingBrick: Brick{
     
     
-    CCSprite*paddle;
+    Brick*paddle;
+    b2Body *_paddleBody;   
     
     
     
 }
 -(MovingBrick*)initWithWorld: (b2World*)world2;
 
+-(b2Body)PaddleBody;
 
 @end
