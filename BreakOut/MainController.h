@@ -18,6 +18,9 @@
 #import "Paddle.h"
 #import "Bricks.h"
 #import "GUILabels.h"
+#import "GameElements.h"
+#import "Brick.h"
+#import "MovingBrick.h"
 
 
 
@@ -26,9 +29,13 @@
 	
 	b2World* world;
 	Ball*bola;
-    Paddle*paddle;
     Bricks*bricks;
     GUILabels*guiLabels;
+    GameElements*gameElements;
+    Brick*paddle2;
+    MovingBrick*paddle;
+    b2Body *_paddleBody;    
+    
     
 }
 

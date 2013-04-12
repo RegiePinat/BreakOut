@@ -103,7 +103,7 @@
                 //shape definition
                 
                 b2FixtureDef block2ShapeDef;
-                block2ShapeDef.shape = &block2Shape;
+                block2ShapeDef.shape= &block2Shape;
                 block2ShapeDef.density=10.0;
                 block2ShapeDef.friction = 0.0;
                 block2ShapeDef.restitution=1.0f;

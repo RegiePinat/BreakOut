@@ -22,9 +22,13 @@
     CCSprite *lifeSprite3;
     CCMenuItemFont *pauseMenuItem;
     CCSprite *powerUp;
-    
+    CCLabelTTF *title;
+    CCLabelTTF *powerUpLabel;
 }
 
+-(void)setScoreString:(int)score;
+-(void)setPowerUpstring:(int)powerUp;
+-(void)setTimeLabel:(int)secs;
 
 
 @property(nonatomic, strong)CCSprite *lifeSprite;

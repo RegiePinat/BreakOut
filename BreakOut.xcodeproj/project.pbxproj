@@ -190,6 +190,11 @@
 		7D5BF1C817161E87009CBDAC /* GUILabels.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7D5BF1C717161E87009CBDAC /* GUILabels.mm */; };
 		7D5BF1CA17161F36009CBDAC /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D5BF1C917161F36009CBDAC /* star.png */; };
 		7D5BF1CC17161F48009CBDAC /* LifeHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D5BF1CB17161F48009CBDAC /* LifeHeart.png */; };
+		7D674B15171715CF00AA5E30 /* GameElements.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7D674B14171715CF00AA5E30 /* GameElements.mm */; };
+		7D674B181717255D00AA5E30 /* Brick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7D674B171717255D00AA5E30 /* Brick.mm */; };
+		7D674B1B1717272200AA5E30 /* BrickManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7D674B1A1717272200AA5E30 /* BrickManager.mm */; };
+		7D674B1E1717677000AA5E30 /* MovingBrick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7D674B1D1717677000AA5E30 /* MovingBrick.mm */; };
+		7D674B21171767A100AA5E30 /* StaticBrick.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7D674B20171767A000AA5E30 /* StaticBrick.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -567,6 +572,16 @@
 		7D5BF1C717161E87009CBDAC /* GUILabels.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GUILabels.mm; sourceTree = "<group>"; };
 		7D5BF1C917161F36009CBDAC /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		7D5BF1CB17161F48009CBDAC /* LifeHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LifeHeart.png; sourceTree = "<group>"; };
+		7D674B13171715CF00AA5E30 /* GameElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameElements.h; sourceTree = "<group>"; };
+		7D674B14171715CF00AA5E30 /* GameElements.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameElements.mm; sourceTree = "<group>"; };
+		7D674B161717255D00AA5E30 /* Brick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brick.h; sourceTree = "<group>"; };
+		7D674B171717255D00AA5E30 /* Brick.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Brick.mm; sourceTree = "<group>"; };
+		7D674B191717272200AA5E30 /* BrickManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickManager.h; sourceTree = "<group>"; };
+		7D674B1A1717272200AA5E30 /* BrickManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BrickManager.mm; sourceTree = "<group>"; };
+		7D674B1C1717677000AA5E30 /* MovingBrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingBrick.h; sourceTree = "<group>"; };
+		7D674B1D1717677000AA5E30 /* MovingBrick.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MovingBrick.mm; sourceTree = "<group>"; };
+		7D674B1F171767A000AA5E30 /* StaticBrick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticBrick.h; sourceTree = "<group>"; };
+		7D674B20171767A000AA5E30 /* StaticBrick.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StaticBrick.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,9 +611,19 @@
 				7D5BF1C417161732009CBDAC /* Bricks.mm */,
 				7D5BF1C617161E87009CBDAC /* GUILabels.h */,
 				7D5BF1C717161E87009CBDAC /* GUILabels.mm */,
+				7D674B13171715CF00AA5E30 /* GameElements.h */,
+				7D674B14171715CF00AA5E30 /* GameElements.mm */,
 				7D5BF1B417160645009CBDAC /* Ball.h */,
 				7D5BF1B91716116B009CBDAC /* Paddle.h */,
 				7D5BF1BA1716116B009CBDAC /* Paddle.mm */,
+				7D674B191717272200AA5E30 /* BrickManager.h */,
+				7D674B1A1717272200AA5E30 /* BrickManager.mm */,
+				7D674B161717255D00AA5E30 /* Brick.h */,
+				7D674B171717255D00AA5E30 /* Brick.mm */,
+				7D674B1C1717677000AA5E30 /* MovingBrick.h */,
+				7D674B1D1717677000AA5E30 /* MovingBrick.mm */,
+				7D674B1F171767A000AA5E30 /* StaticBrick.h */,
+				7D674B20171767A000AA5E30 /* StaticBrick.mm */,
 				7D5BF1B517160645009CBDAC /* Ball.mm */,
 				7D5BEF93171604D6009CBDAC /* BreakOut */,
 				7D5BEF80171604D6009CBDAC /* Frameworks */,
@@ -1411,6 +1436,11 @@
 				7D5BF1BB1716116B009CBDAC /* Paddle.mm in Sources */,
 				7D5BF1C517161732009CBDAC /* Bricks.mm in Sources */,
 				7D5BF1C817161E87009CBDAC /* GUILabels.mm in Sources */,
+				7D674B15171715CF00AA5E30 /* GameElements.mm in Sources */,
+				7D674B181717255D00AA5E30 /* Brick.mm in Sources */,
+				7D674B1B1717272200AA5E30 /* BrickManager.mm in Sources */,
+				7D674B1E1717677000AA5E30 /* MovingBrick.mm in Sources */,
+				7D674B21171767A100AA5E30 /* StaticBrick.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1516,6 +1546,7 @@
 				7D5BF1B3171604DD009CBDAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
