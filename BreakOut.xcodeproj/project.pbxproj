@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D4A69B9171C78D3007ACC76 /* MyContactListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7D4A69B8171C78D3007ACC76 /* MyContactListener.mm */; };
 		7D5BEF82171604D6009CBDAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5BEF81171604D6009CBDAC /* QuartzCore.framework */; };
 		7D5BEF84171604D6009CBDAC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5BEF83171604D6009CBDAC /* OpenGLES.framework */; };
 		7D5BEF86171604D6009CBDAC /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5BEF85171604D6009CBDAC /* OpenAL.framework */; };
@@ -198,8 +199,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7D510E441718AC1C001643BE /* MyContactListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
-		7D510E451718AC1C001643BE /* MyContactListener.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
+		7D4A69B7171C78D3007ACC76 /* MyContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactListener.h; sourceTree = "<group>"; };
+		7D4A69B8171C78D3007ACC76 /* MyContactListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyContactListener.mm; sourceTree = "<group>"; };
 		7D5BEF7E171604D6009CBDAC /* BreakOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5BEF81171604D6009CBDAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7D5BEF83171604D6009CBDAC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -609,6 +610,8 @@
 		7D5BEF75171604D6009CBDAC = {
 			isa = PBXGroup;
 			children = (
+				7D4A69B7171C78D3007ACC76 /* MyContactListener.h */,
+				7D4A69B8171C78D3007ACC76 /* MyContactListener.mm */,
 				7D5BF1C317161732009CBDAC /* Bricks.h */,
 				7D5BF1C417161732009CBDAC /* Bricks.mm */,
 				7D5BF1C617161E87009CBDAC /* GUILabels.h */,
@@ -662,8 +665,6 @@
 			children = (
 				7D5BF19E171604DD009CBDAC /* AppDelegate.h */,
 				7D5BF19F171604DD009CBDAC /* AppDelegate.mm */,
-				7D510E441718AC1C001643BE /* MyContactListener.h */,
-				7D510E451718AC1C001643BE /* MyContactListener.mm */,
 				7D5BF1A1171604DD009CBDAC /* MainController.h */,
 				7D5BF1A2171604DD009CBDAC /* MainController.mm */,
 				7D5BF1A4171604DD009CBDAC /* IntroLayer.h */,
@@ -1445,6 +1446,7 @@
 				7D674B1B1717272200AA5E30 /* BrickManager.mm in Sources */,
 				7D674B1E1717677000AA5E30 /* MovingBrick.mm in Sources */,
 				7D674B21171767A100AA5E30 /* StaticBrick.mm in Sources */,
+				7D4A69B9171C78D3007ACC76 /* MyContactListener.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

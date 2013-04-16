@@ -18,7 +18,7 @@
     
 }
 
--(Brick*)initWithWorld: (b2World*)world;
+-(Brick*)initWithWorld: (b2World*)world2 withRect:(CGRect)rect;
 -(void)paddleMake;
 @property(nonatomic)b2World*world;
 @end

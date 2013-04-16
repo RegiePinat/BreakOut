@@ -20,6 +20,9 @@
         
         ball =[CCSprite spriteWithFile:@"redball.png" rect:CGRectMake(0, 0, 30, 30) ];
          [self addChild:ball];
+        
+        
+        
      
         ball.position = ccp(100,100);
         
@@ -40,7 +43,7 @@
         
         //Create shape defintion and then add it to body
         
-        b2Fixture *_ballFixture;
+       
         b2FixtureDef ballShapeDef;
         ballShapeDef.shape = &circle;
         ballShapeDef.density= 1.0f;
@@ -56,7 +59,8 @@
         ballBody -> ApplyLinearImpulse(force, ballBodyDef.position);
         
         
-       
+      
+      
         
      
         
@@ -81,14 +85,21 @@
 }
 
 
--(b2Fixture)ballFixture
+-(b2Fixture *)ballFixture
 {
     
-    return *(_ballFixture);
+    return _ballFixture;
     
     
 }
 
+-(CCSprite *)walaLang
+{
+    return ball;
+    
+    
+    
+}
 
 
 

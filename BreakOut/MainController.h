@@ -22,6 +22,7 @@
 #import "MyContactListener.h"
 #import "MovingBrick.h"
 #import "BrickManager.h"
+#import "StaticBrick.h"
 
 
 
@@ -36,10 +37,12 @@
     MovingBrick*paddle;
     b2Body *_paddleBody;    
     BrickManager*brickManager;
-    MyContactListener*myContactListener;\
+    MyContactListener*myContactListener;
     Brick*brick;
-    
-    
+    b2Fixture *_paddleFixture;
+    StaticBrick*stab;
+    b2Body *ballBody;
+    b2Fixture *_bottomFixture;
 }
 
 +(CCScene *) scene;

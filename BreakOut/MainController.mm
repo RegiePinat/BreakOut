@@ -39,7 +39,6 @@
         
     {
         
-        
         CGSize winSize = [CCDirector sharedDirector].winSize;
         
         b2Vec2 gravity = b2Vec2 (0.0f, 0.0f);
@@ -47,17 +46,24 @@
         world = new b2World(gravity);
         
         
+        myContactListener = new MyContactListener();
+        world->SetContactListener(myContactListener);
+    
         
         bola = [[Ball alloc]initWithWorld:world];
-        //bricks = [[Bricks alloc]initWithWorld:world];
+   
+        
+        
         guiLabels = [[GUILabels alloc]init];
         paddle = [[MovingBrick alloc]initWithWorld:world];
         brickManager = [[BrickManager alloc]initWithWorld:world];
+        
+        
 
         b2Body *_groundBody;
 
     
-        b2Fixture *_paddleFixture;
+        //b2Fixture *_paddleFixture;
         b2BodyDef paddleBodyDef;
         
         paddleBodyDef.type = b2_dynamicBody;
@@ -75,9 +81,7 @@
         paddleShapeDef.friction=0.4f;
         paddleShapeDef.restitution = 1.0f;
         _paddleFixture = _paddleBody->CreateFixture(&paddleShapeDef);
-        
-    
-        b2Fixture *_bottomFixture;
+              
         b2BodyDef groundBodyDef;
         groundBodyDef.position.Set(0,0);
         _groundBody = world->CreateBody(&groundBodyDef);
@@ -107,7 +111,7 @@
         jointDef.collideConnected=true;
         jointDef.Initialize(_paddleBody, _groundBody, _paddleBody->GetWorldCenter(), worldAxis);
         world->CreateJoint(&jointDef);
-    
+
         
         gameElements = [[GameElements alloc]init];
         [gameElements startTimer];
@@ -116,19 +120,25 @@
         
         [guiLabels setTimeLabel:[gameElements startTimer]];
         
-    
+        
+        
 		
         [self addChild:bola];
         
         [self addChild:paddle];
+        
+        //[self addChild:stab];
         
         [self addChild:guiLabels];
         
         [self schedule:@selector(tick:)];
         
         [self addChild:brickManager];
-      
+        
         self.isAccelerometerEnabled= YES;
+        
+        myContactListener = new MyContactListener();
+        world->SetContactListener(myContactListener);
         
 	
 }
@@ -144,28 +154,97 @@
             ballData.position = ccp(b->GetPosition().x * PTM_RATIO,
                                     b->GetPosition().y * PTM_RATIO);
             ballData.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
-        
-                
-            
-            
            
         }
     }
-
-  /*
+   
+    b2Fixture* _ballFixture = [bola ballFixture];
+  
     std::vector<b2Body *>toDestroy;
     std::vector<MyContact>::iterator pos;
     for (pos=myContactListener->_contacts.begin();
          pos != myContactListener->_contacts.end(); ++pos) {
         MyContact contact = *pos;
+        
+      
+        
+     /*   if ((contact.fixtureA == _ballFixture && contact.fixtureB == _paddleFixture)|| (contact.fixtureA == _paddleFixture && contact.fixtureB == _ballFixture)) {
+            
+            
+            NSLog(@"aaaaaaaa");
+            //ballBody->SetLinearVelocity(b2Vec2(0,0));
+        
+            
+        
+       
+            
+        }
+        */
+        
+       
+        
+        
+        
+    if ((contact.fixtureA == _bottomFixture && contact.fixtureB == _ballFixture) ||
+        (contact.fixtureA == _ballFixture && contact.fixtureB == _bottomFixture)){
+        
+        [guiLabels decreaseLife1];
+        
     }
-*/
+    
+    b2Body *bodyA = contact.fixtureA->GetBody();
+    b2Body *bodyB = contact.fixtureB->GetBody();
+    if (bodyA->GetUserData() != NULL && bodyB->GetUserData() != NULL) {
+        CCSprite *spriteA = (CCSprite *) bodyA->GetUserData();
+        CCSprite *spriteB = (CCSprite *) bodyB->GetUserData();
+        
+        //Sprite A = ball, Sprite B = Block
+        if (spriteA.tag == 1 && spriteB.tag == 2) {
+            if (std::find(toDestroy.begin(), toDestroy.end(), bodyB) == toDestroy.end()) {
+                toDestroy.push_back(bodyB);
+                [spriteB.parent removeChild:spriteB cleanup:YES];
+                
+            }
+        }
+        
+        else if (spriteA.tag == 2 && spriteB.tag == 1) {
+            if (std::find(toDestroy.begin(), toDestroy.end(), bodyA) == toDestroy.end()) {
+                toDestroy.push_back(bodyA);
+                
+                [spriteA.parent removeChild:spriteA cleanup:YES];
+            }
+        }
+        
+    }
 
+    
+    }
 
+std::vector<b2Body *>::iterator pos2;
+for (pos2 = toDestroy.begin(); pos2 != toDestroy.end(); ++pos2)
 
-
+{
+    b2Body *body = *pos2;
+    
+    
+    if (body->GetUserData() != NULL)
+        
+        
+    {
+        CCSprite *sprite = (CCSprite *) body->GetUserData();
+        [self removeChild:sprite cleanup:YES];
+    }
+    world->DestroyBody(body);
+}
 
 }
+
+
+
+
+    
+
+
 
 
 
@@ -197,6 +276,7 @@
     world = NULL;
     
 	[super dealloc];
+    delete myContactListener;
 }	
 
 @end

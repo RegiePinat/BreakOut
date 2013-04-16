@@ -18,6 +18,10 @@
     StaticBrick*block2;
     StaticBrick*block3;
     StaticBrick*block4;
+    b2Body *block3Body;
+    b2Body *block2Body;
+    b2Body *blockBody;
+    
     
     
 }

@@ -20,13 +20,20 @@
         
         
         lifeSprite1= [CCSprite spriteWithFile:@"star.png"];
-        lifeSprite1.position=ccp(100,100);
+        lifeSprite1.position=ccp(30,420);
         [self addChild:lifeSprite1];
         
     
         
         lifeSprite2= [CCSprite spriteWithFile:@"star.png"];
+        lifeSprite2.position = ccp(60, 420);
+        [self addChild:lifeSprite2];
+        
         lifeSprite3= [CCSprite spriteWithFile:@"star.png"];
+        lifeSprite3.position = ccp(90, 420);
+        [self addChild:lifeSprite3];
+        
+        
         powerUp = [CCSprite spriteWithFile:@"LifeHeart.png"];
         
         
@@ -84,6 +91,27 @@
     
    [timeLabel setString:[NSString stringWithFormat:@"%02d", secs]];
     
+}
+-(void)decreaseLife1
+{
+    
+if (lifeSprite3.visible == YES)
+{
+    lifeSprite3.visible = NO;
+    
+}
+else if (lifeSprite3.visible == NO && lifeSprite2.visible == YES)
+{
+    lifeSprite2.visible=NO;
+    
+}
+else
+{
+    lifeSprite1.visible=NO;
+    
+    
+    
+}
 }
 
 

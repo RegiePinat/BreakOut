@@ -12,20 +12,13 @@
 @implementation Brick
 @synthesize world;
 
--(Brick*)initWithWorld: (b2World*)world2
+-(Brick*)initWithWorld: (b2World*)world2 withRect:(CGRect)rect
 {
     
-    
-    
-    
-    
-    if (self=[super initWithFile:@"Sky_Blue.png" rect:CGRectMake (0,0,50,10)]);
+    if (self=[super initWithFile:@"Sky_Blue.png" rect:rect]);
     {
-    
         
         self.world = world2;
-        
-        
     }
     
     return self;

@@ -20,7 +20,8 @@
 }
 -(Ball*)initWithWorld: (b2World*)world;
 -(id)Stop;
-
+-(b2Fixture *)ballFixture;
+-(CCSprite *)walaLang;
 
 
 @property(nonatomic, strong)CCSprite*ball;

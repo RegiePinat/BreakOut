@@ -14,6 +14,9 @@
 -(BrickManager*)initWithWorld:(b2World*)world
 {
     
+    
+    
+    
     b2BodyDef block3BodyDef;
     b2BodyDef block2BodyDef;
     b2BodyDef blockBodyDef;
@@ -30,6 +33,8 @@
             
             block = [[StaticBrick alloc]initWithWorld:world];
             int xOffset = padding+block.contentSize.width+((block.contentSize.width+padding)*i);
+            NSLog(@"......%d", xOffset);
+            
             block.position = ccp(xOffset, 340);
             block.tag = 2;
             [self addChild:block];
@@ -153,16 +158,24 @@
             
         }
 
-        
-        
-        
     }
     
+        
     
+
+
     return self;
+    
+}
+
+
+-(StaticBrick*)returnBlock
+{
+    return block;
     
     
 }
+
 
 
 

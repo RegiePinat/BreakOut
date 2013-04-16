@@ -10,15 +10,18 @@
 #import "cocos2d.h"
 #import "Brick.h"
 
-@interface StaticBrick : Brick {
+@interface StaticBrick: CCLayer{
     
     
-    CCSprite*bricks;
-    Brick*staticBrick;
+    
+    Brick*block;
+    
     
     
     
 }
 -(StaticBrick*)initWithWorld:(b2World*)world;
+-(CCSprite *)walaLang;
+
 
 @end

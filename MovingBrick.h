@@ -11,7 +11,7 @@
 #import "Brick.h"
 #import "Box2D.h"
 
-@interface MovingBrick: Brick{
+@interface MovingBrick: CCLayer{
     
     
     Brick*paddle;
@@ -20,8 +20,8 @@
     
     
 }
--(MovingBrick*)initWithWorld: (b2World*)world2;
+-(MovingBrick*)initWithWorld: (b2World*)world;
 
--(b2Body)PaddleBody;
+-(b2Body*)PaddleBody;
 
 @end

@@ -11,13 +11,18 @@
 
 @implementation StaticBrick
 
--(Brick*)initWithWorld:(b2World *)world
+-(StaticBrick*)initWithWorld:(b2World *)world
 {
    
-    if(self = [super initWithWorld:world])
+    if(self = [super init])
     {
-        bricks = [CCSprite spriteWithFile:@"Sky_Blue.png" rect:CGRectMake(0,0,36,36) ];
+        
+      block= [[Brick alloc] initWithWorld:world withRect:CGRectMake(0,0,20,30)];
+        self.contentSize = CGSizeMake(20,30);
+        
+        
         NSLog(@"aaaaaa");
+        [self addChild:block];
         
         
     }
@@ -27,5 +32,11 @@
     
         
 }
+
+
+
+
+
+
 
 @end

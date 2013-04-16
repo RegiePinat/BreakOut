@@ -29,6 +29,7 @@
 -(void)setScoreString:(int)score;
 -(void)setPowerUpstring:(int)powerUp;
 -(void)setTimeLabel:(int)secs;
+-(void)decreaseLife1;
 
 
 @property(nonatomic, strong)CCSprite *lifeSprite;

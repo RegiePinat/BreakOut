@@ -10,22 +10,34 @@
 
 
 @implementation MovingBrick
--(MovingBrick*)initWithWorld: (b2World*)world2
+-(MovingBrick*)initWithWorld: (b2World*)world
 {
     
-    if ((self = [super initWithWorld:world2]))
+    if ((self = [super init]))
     {
         
-        b2Body *_groundBody;
+        paddle = [[Brick alloc] initWithWorld:world withRect:CGRectMake(0,0,20,20)];
         
-        CGSize winSize = [CCDirector sharedDirector].winSize;        
+        
+        [self addChild:paddle];
+        
+        
+        
+        //b2Body *_groundBody;
+        
+        //CGSize winSize = [CCDirector sharedDirector].winSize;
+        
+        
+        /*
+        
+        
         b2Fixture *_paddleFixture;
         b2BodyDef paddleBodyDef;
         
         paddleBodyDef.type = b2_dynamicBody;
         paddleBodyDef.position.Set(winSize.width/2/PTM_RATIO, 100/PTM_RATIO);
         paddleBodyDef.userData=paddle;
-        _paddleBody = world2->CreateBody(&paddleBodyDef);
+        _paddleBody = world->CreateBody(&paddleBodyDef);
         
         
         b2PolygonShape paddleShape;
@@ -42,7 +54,7 @@
         b2Fixture *_bottomFixture;
         b2BodyDef groundBodyDef;
         groundBodyDef.position.Set(0,0);
-        _groundBody = world2->CreateBody(&groundBodyDef);
+        _groundBody = world->CreateBody(&groundBodyDef);
         
         b2EdgeShape groundBox;
         b2FixtureDef groundBoxDef;
@@ -68,11 +80,11 @@
         b2Vec2 worldAxis(1.0f,0.0f);
         jointDef.collideConnected=true;
         jointDef.Initialize(_paddleBody, _groundBody, _paddleBody->GetWorldCenter(), worldAxis);
-        world2->CreateJoint(&jointDef);
+        world->CreateJoint(&jointDef);
        
         
        
-    
+    */
         
      
         
@@ -86,8 +98,27 @@
     
 }
 
+/*
+-(b2Body*)PaddleBody
+{
+    
+    return _paddleBody;
+    
+    
+    
+    
+}
+ 
+ 
+ -(b2Fixture *) bottomFixture
+{
+    
+    
+    return _bottomFixture;
+    
+}
 
-
+*/
 
 
 
