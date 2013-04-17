@@ -10,21 +10,24 @@
 #import "cocos2d.h"
 #import "GUILabels.h"
 
+
 @interface GameElements : CCLayer {
     
-    int score;
+    
+
     int powerUpInt;
     int timeInt;
     int mins;
     int seconds;
     int timerInt;
-    GUILabels*gui;
+    int score;
     
-    
+  
+    GUILabels *labels;
 }
 -(int)startTimer;
--(void)addPowerUp;
--(void)addScore;
+-(int)addPowerUp;
+-(int)addScore;
 
 
 @end

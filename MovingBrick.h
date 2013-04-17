@@ -24,4 +24,7 @@
 
 -(b2Body*)PaddleBody;
 
+-(CCSprite*)paddlePowerUp;
+
+
 @end

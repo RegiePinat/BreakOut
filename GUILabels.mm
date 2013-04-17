@@ -17,6 +17,7 @@
     if (self = [super init])
     {
         
+        //gameElements = [[GameElements alloc]init];
         
         
         lifeSprite1= [CCSprite spriteWithFile:@"star.png"];
@@ -34,21 +35,13 @@
         [self addChild:lifeSprite3];
         
         
-        powerUp = [CCSprite spriteWithFile:@"LifeHeart.png"];
-        
-        
         title = [CCLabelTTF labelWithString:@"Level 1" fontName:@"Marker Felt" fontSize:40];
         title.position = ccp(155, 450);
         [self addChild:title];
-        
-        
-        scoreLabel = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:25.0];
-		[scoreLabel setPosition:ccp(280, 50)];
-		[scoreLabel setColor:ccc3(255, 255, 255)];
-		[self addChild:scoreLabel z:3];
+    
         
         CCLabelTTF *scorey = [CCLabelTTF labelWithString:@"Score: " fontName:@"Marker Felt" fontSize:25.0];
-        scorey.position = ccp(230, 50);
+        scorey.position = ccp(250, 50);
         [self addChild:scorey];
         
         
@@ -65,7 +58,10 @@
         
         timeLabel.position = ccp(155, 425);
         
-        [self addChild:timeLabel];
+        
+        
+        
+        [self addChild:timeLabel z:3 tag:timeCount];
        
         
         
@@ -75,10 +71,24 @@
     
 }
 
--(void)setScoreString:(int)score
+-(id)setScoreString:(int)score
 {
     
+     scoreLabel = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:25.0];
+    [scoreLabel setPosition:ccp(300, 50)];
+    [scoreLabel setColor:ccc3(255, 255, 255)];
+    [self addChild:scoreLabel z:3];
+   
+    
     [scoreLabel setString:[NSString stringWithFormat:@"%i", score]];
+    
+   
+    
+    NSLog(@"mmmmm");
+    return  scoreLabel;
+    
+    
+    
     
 }
 -(void)setPowerUpstring:(int)powerUpInt
@@ -89,9 +99,26 @@
 -(void)setTimeLabel:(int)secs
 {
     
+    //secs = [gameElements startTimer];
+    
+    
    [timeLabel setString:[NSString stringWithFormat:@"%02d", secs]];
     
 }
+
+-(CCSprite*)powerUpTrigger
+
+{
+    powerUp = [CCSprite spriteWithFile:@"thunder.png" rect:CGRectMake(0,0,36,36)];
+    powerUp.contentSize = CGSizeMake(36, 36);
+    
+    
+    
+    
+    return powerUp;
+   
+}
+
 -(void)decreaseLife1
 {
     

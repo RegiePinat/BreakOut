@@ -16,10 +16,10 @@
     if ((self = [super init]))
     {
         
-        paddle = [[Brick alloc] initWithWorld:world withRect:CGRectMake(0,0,20,20)];
+        paddle = [[Brick alloc] initWithWorld:world withRect:CGRectMake(0,0,60,15)];
+        self.contentSize = CGSizeMake(60,15);
         
-        
-        [self addChild:paddle];
+        [self addChild:paddle z:0];
         
         
         
@@ -119,6 +119,13 @@
 }
 
 */
+
+-(CCSprite*)paddlePowerUp
+{
+    
+    paddle.scaleX = 2.0;
+    
+}
 
 
 

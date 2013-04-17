@@ -18,9 +18,9 @@
         
         
         
-        ball =[CCSprite spriteWithFile:@"redball.png" rect:CGRectMake(0, 0, 30, 30) ];
+        ball =[CCSprite spriteWithFile:@"redball.png" rect:CGRectMake(0, 0, 20, 20) ];
          [self addChild:ball];
-        
+        self.contentSize = CGSizeMake(30,30);
         
         
      
@@ -78,10 +78,7 @@
 -(id)Stop
 
 {
-
     ballBody->SetLinearVelocity(b2Vec2(0,0));
-    
-    
 }
 
 
@@ -97,7 +94,14 @@
 {
     return ball;
     
+}
+
+
+-(id)Move
+{
     
+   ballBody->SetLinearVelocity(b2Vec2(7,7));
+  
     
 }
 

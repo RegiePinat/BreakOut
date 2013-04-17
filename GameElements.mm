@@ -20,11 +20,19 @@
         
         timeInt = 60;
         
+        powerUpInt =0;
+        score = 0;
         
-        [self schedule:@selector(startTimer)interval:1.0];
+        
+        
+    
+        labels = [[GUILabels alloc]init];
         
         
         
+        //[self schedule:@selector(startTimer)interval:1.0];
+        
+              
         
     }
     
@@ -41,36 +49,50 @@
     
     
     
-    seconds = timeInt %30;
-    mins = timeInt/60;
+   seconds = timeInt %30;
     
-    return timeInt;
+    
+    [labels setTimeLabel:seconds];
+    
+    NSLog(@"zzzzzzxxxxxxxxxx");
+    
     
     
     if (timeInt <=0) {
         [self unschedule:@selector(startTimer)];
     }
     
+      return timeInt;
     
     
     
 }
--(void)addPowerUp
+-(int)addPowerUp
 
 {
     powerUpInt++;
     
-    [gui setPowerUpstring:powerUpInt];
+    [labels setPowerUpstring:powerUpInt];
+    
+    return powerUpInt;
+    
+    
+   
     
     
     
 }
--(void)addScore
+-(int)addScore
 {
+  
     
+    score = score +10;
     
-    score =+10;
-    [gui setScoreString:score];
+    [labels setScoreString:score];
+    
+    NSLog(@">>>>>>>>>>>>>>");
+    
+    return score;
     
     
     

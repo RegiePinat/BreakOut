@@ -26,16 +26,16 @@
     if (self=[super init])
     {
         
-        for (int i = 0; i<5; i++)
+        for (int i = 0; i<10; i++)
         {
-            static int padding=2;
+            static int padding=0;
             
             
             block = [[StaticBrick alloc]initWithWorld:world];
             int xOffset = padding+block.contentSize.width+((block.contentSize.width+padding)*i);
             NSLog(@"......%d", xOffset);
             
-            block.position = ccp(xOffset, 340);
+            block.position = ccp(xOffset, 300);
             block.tag = 2;
             [self addChild:block];
             
@@ -43,7 +43,7 @@
             //create block body
             b2BodyDef blockBodyDef;
             blockBodyDef.type = b2_staticBody;
-            blockBodyDef.position.Set(xOffset/PTM_RATIO, 340/PTM_RATIO);
+            blockBodyDef.position.Set(xOffset/PTM_RATIO, 310/PTM_RATIO);
             blockBodyDef.userData=block;
             b2Body *blockBody = world->CreateBody(&blockBodyDef);
             
@@ -76,14 +76,14 @@
         
         
         
-        for (int i = 0; i<5; i++)
+        for (int i = 0; i<10; i++)
         {
-            static int padding=2;
+            static int padding=0;
             
             
             block2 = [[StaticBrick alloc]initWithWorld:world];
             int xOffset = padding+block2.contentSize.width+((block2.contentSize.width+padding)*i);
-            block2.position = ccp(xOffset, 330);
+            block2.position = ccp(xOffset, 350);
             block2.tag = 2;
             [self addChild:block2];
             
@@ -117,14 +117,14 @@
             
         }
         
-        for (int i = 0; i<5; i++)
+        for (int i = 0; i<10; i++)
         {
-            static int padding=2;
+            static int padding=0;
             
             
             block3 = [[StaticBrick alloc]initWithWorld:world];
             int xOffset = padding+block3.contentSize.width+((block3.contentSize.width+padding)*i);
-            block3.position = ccp(xOffset, 320);
+            block3.position = ccp(xOffset, 390);
             block3.tag = 2;
             [self addChild:block3];
             

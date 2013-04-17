@@ -17,8 +17,8 @@
     if(self = [super init])
     {
         
-      block= [[Brick alloc] initWithWorld:world withRect:CGRectMake(0,0,20,30)];
-        self.contentSize = CGSizeMake(20,30);
+      block= [[Brick alloc] initWithWorld:world withRect:CGRectMake(0,0,30,20)];
+        self.contentSize = CGSizeMake(30,20);
         
         
         NSLog(@"aaaaaa");

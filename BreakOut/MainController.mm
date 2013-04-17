@@ -35,7 +35,7 @@
 -(id) init
 {
     
-    if (self = [super init])
+    if ((self = [super initWithColor:ccc4(1, 245, 376, 56)]))
         
     {
         
@@ -52,16 +52,17 @@
         
         bola = [[Ball alloc]initWithWorld:world];
    
+        [gameElements schedule:@selector(startTimer:)interval:1.0];
         
         
         guiLabels = [[GUILabels alloc]init];
         paddle = [[MovingBrick alloc]initWithWorld:world];
         brickManager = [[BrickManager alloc]initWithWorld:world];
         
-        
+       
 
         b2Body *_groundBody;
-
+      
     
         //b2Fixture *_paddleFixture;
         b2BodyDef paddleBodyDef;
@@ -111,23 +112,12 @@
         jointDef.collideConnected=true;
         jointDef.Initialize(_paddleBody, _groundBody, _paddleBody->GetWorldCenter(), worldAxis);
         world->CreateJoint(&jointDef);
-
         
-        gameElements = [[GameElements alloc]init];
-        [gameElements startTimer];
+     
         
-        [gameElements schedule:@selector(startTimer)interval:1.0];
-        
-        [guiLabels setTimeLabel:[gameElements startTimer]];
-        
-        
-        
-		
         [self addChild:bola];
         
         [self addChild:paddle];
-        
-        //[self addChild:stab];
         
         [self addChild:guiLabels];
         
@@ -147,6 +137,9 @@
 
 -(void)tick:(ccTime) dt {
     
+    
+   
+    
     world->Step(dt, 10, 10);
     for(b2Body *b = world->GetBodyList(); b; b=b->GetNext()) {
         if (b->GetUserData() != NULL) {
@@ -157,6 +150,20 @@
            
         }
     }
+    
+    
+    if (CGRectIntersectsRect(powerUp.boundingBox, paddle.boundingBox)) {
+        NSLog(@"aaaaaaaa,,,,,,,......");
+        
+        powerUp.visible = NO;
+        powerUp = NULL;
+        
+        [gameElements addPowerUp];
+        
+        
+        [paddle paddlePowerUp];
+        
+    }
    
     b2Fixture* _ballFixture = [bola ballFixture];
   
@@ -165,25 +172,6 @@
     for (pos=myContactListener->_contacts.begin();
          pos != myContactListener->_contacts.end(); ++pos) {
         MyContact contact = *pos;
-        
-      
-        
-     /*   if ((contact.fixtureA == _ballFixture && contact.fixtureB == _paddleFixture)|| (contact.fixtureA == _paddleFixture && contact.fixtureB == _ballFixture)) {
-            
-            
-            NSLog(@"aaaaaaaa");
-            //ballBody->SetLinearVelocity(b2Vec2(0,0));
-        
-            
-        
-       
-            
-        }
-        */
-        
-       
-        
-        
         
     if ((contact.fixtureA == _bottomFixture && contact.fixtureB == _ballFixture) ||
         (contact.fixtureA == _ballFixture && contact.fixtureB == _bottomFixture)){
@@ -204,6 +192,11 @@
                 toDestroy.push_back(bodyB);
                 [spriteB.parent removeChild:spriteB cleanup:YES];
                 
+              
+                
+                
+                
+                
             }
         }
         
@@ -212,6 +205,7 @@
                 toDestroy.push_back(bodyA);
                 
                 [spriteA.parent removeChild:spriteA cleanup:YES];
+                                
             }
         }
         
@@ -233,38 +227,41 @@ for (pos2 = toDestroy.begin(); pos2 != toDestroy.end(); ++pos2)
     {
         CCSprite *sprite = (CCSprite *) body->GetUserData();
         [self removeChild:sprite cleanup:YES];
+        NSLog(@"wasak");
+        
+        [gameElements addScore];
     }
-    world->DestroyBody(body);
-}
-
-}
-
-
-
-
     
+   world->DestroyBody(body);
+   
+    
+    
+    
+    
+    
+    
+    CGSize winSize = [CCDirector sharedDirector].winSize;
+    balls = [bola walaLang];
+    powerUp =[guiLabels powerUpTrigger];
+    powerUp.position = CGPoint(balls.position);
+    
+    powerUp.visible = YES;
+    
+    [powerUp runAction:[CCSequence actions:[CCMoveBy actionWithDuration:4.0 position:ccp(0, -winSize.height-powerUp.contentSize.height)], nil]];
+    
+    
+    [self addChild:powerUp z:0];
+    
+    
+    
+}
 
-
-
-
-
-
-
-
+}
 
 
 -(void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-    
-    
-    
-    
-    
     _paddleBody->SetLinearVelocity(b2Vec2(15*acceleration.x,0.0f));
-    
-    
-    
-    
     
     
 }

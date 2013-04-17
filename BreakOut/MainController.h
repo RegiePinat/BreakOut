@@ -26,7 +26,7 @@
 
 
 
-@interface MainController : CCLayer 
+@interface MainController : CCLayerColor
 {
 	
 	b2World* world;
@@ -43,6 +43,8 @@
     StaticBrick*stab;
     b2Body *ballBody;
     b2Fixture *_bottomFixture;
+    CCSprite*balls;
+    CCSprite*powerUp;
 }
 
 +(CCScene *) scene;

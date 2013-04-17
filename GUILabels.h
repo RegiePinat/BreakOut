@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+
+@class GameElements;
+
+
 @interface GUILabels : CCLayer {
     
     
@@ -24,12 +28,20 @@
     CCSprite *powerUp;
     CCLabelTTF *title;
     CCLabelTTF *powerUpLabel;
+    
+    
+    
+    int timeCount;
+    
+    //
 }
 
--(void)setScoreString:(int)score;
+-(id)setScoreString:(int)score;
 -(void)setPowerUpstring:(int)powerUp;
 -(void)setTimeLabel:(int)secs;
 -(void)decreaseLife1;
+-(CCSprite*)powerUpTrigger;
+
 
 
 @property(nonatomic, strong)CCSprite *lifeSprite;
